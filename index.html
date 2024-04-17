@@ -13,8 +13,8 @@
     <div class="timer_cont" id="timerCont">
         <button class="time-buttons" id="inc_btn">+</button>
         <button class="time-buttons" id="dec_btn">-</button>
-        <div class="timer" id="tmr">
-        </div>
+        <div class="timer" id="tmr"></div>
+        <div class="timer" id="tmr_rest" style="display: none"></div>
         <div class="container">
             <div class="rounds_cont" id="rounds"></div>
             <div class="slash">/</div>
@@ -25,8 +25,9 @@
             <div class="rest_cont" id="rounds"></div>
             <div class="rest_total" id="rest"></div>
             <div class="rest">Rest</div>
-            <button class="rest-buttons" id="inc_round_btn">+</button>
-            <button class="rest-buttons" id="dec_round_btn">-</button>
+            <div id="rest_display" class="rest_display"></div>
+            <button class="rest-buttons" id="inc_rest_btn">+</button>
+            <button class="rest-buttons" id="dec_rest_btn">-</button>
         </div>
         <div class="status_cont">
             <p id="status">status</p>

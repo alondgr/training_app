@@ -18,7 +18,8 @@ body {
 
 .rounds_cont,
 .rounds_total,
-.slash {
+.slash,
+.rest_display {
   font-size: 5em;
   display: inline;
   margin: 0.05em;

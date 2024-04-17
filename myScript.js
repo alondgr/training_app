@@ -1,23 +1,33 @@
-let remainingTime = 4000;
-document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
+let workTimer = 6000;
+let remainingTime = workTimer;
 let initRound = 0;
 let totalRounds = 3;
+let initRest = 3000;
+let restTimer = initRest;
 
-document.getElementById("rounds_total").innerHTML = totalRounds;
+document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
 document.getElementById("rounds").innerHTML = initRound;
+document.getElementById("rounds_total").innerHTML = totalRounds;
+document.getElementById("rest_display").innerHTML = "0" + formatTime(restTimer);
+document.getElementById("tmr_rest").innerHTML = "0" + formatTime(initRest);
 
 let inc_btn = document.getElementById("inc_btn");
 let dec_btn = document.getElementById("dec_btn");
 let inc_btn_rounds = document.getElementById("inc_round_btn");
 let dec_btn_rounds = document.getElementById("dec_round_btn");
+let inc_btn_rest = document.getElementById("inc_rest_btn");
+let dec_btn_rest = document.getElementById("dec_rest_btn");
 //------------------------BUTTONS-------------------------------------------------------------
 inc_btn.addEventListener("click", () => {
     remainingTime += 1000;
     document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
+    workTimer = remainingTime;
+    console.log(workTimer);
 });
 
 dec_btn.addEventListener("click", () => {
     remainingTime -= 1000;
+    workTimer = remainingTime;
     if (remainingTime <= 0) {
         remainingTime = 0;
     }
@@ -38,10 +48,26 @@ dec_btn_rounds.addEventListener("click", () => {
     }
 });
 
+inc_btn_rest.addEventListener("click", () => {
+    restTimer += 1000;
+    initRest = restTimer;
+    document.getElementById("rest_display").innerHTML = formatTime(restTimer);
+});
+
+dec_btn_rest.addEventListener("click", () => {
+    restTimer -= 1000;
+    initRest = restTimer;
+    document.getElementById("rest_display").innerHTML = formatTime(restTimer);
+    if (restTimer < 1000) {
+        restTimer = 1;
+        document.getElementById("rest_display").innerHTML = formatTime(restTimer);
+    }
+});
+
 const startButton = document.getElementById("strtBtn");
 
 //--------^^^^^^^^^^^^^^-----BUTTONS----^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^--------------------------
-
+//----------TIME----------------------------------------------------------------------------------
 function formatTime(remainingMilliseconds) {
     let minutes = Math.floor(remainingMilliseconds / 60000);
     let seconds = Math.floor((remainingMilliseconds % 60000) / 1000);
@@ -50,53 +76,57 @@ function formatTime(remainingMilliseconds) {
 
     return minutes + ":" + seconds;
 }
+//----------TIME----------------------------------------------------------------------------------
 
-let intervalId;
-
-startButton.addEventListener("click", () => {
+//1
+startButton.addEventListener("click", startTimer);
+function startTimer() {
     if (startButton.textContent === "START") {
         startButton.textContent = "STOP";
-
-        intervalId = setInterval(() => {
-            remainingTime -= 1000;
-
-            if (remainingTime <= 0) {
-                clearInterval(intervalId);
-                initRound++;
-                document.getElementById("rounds").innerHTML = initRound;
-                rest();
-            }
-            document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
-        }, 1000);
-    } else if (startButton.textContent === "STOP") {
-
-        clearInterval(intervalId);
     }
-});
+    workoutTimer();
+}
 
+//2
+function workoutTimer() {
+    console.log("remaingn time" + remainingTime);
+    intervalId = setInterval(() => {
+        remainingTime -= 1000;
+        if (remainingTime < 0) {
+            remainingTime = workTimer;
+            clearInterval(intervalId);
+            initRound++;
+            document.getElementById("rounds").innerHTML = initRound;
+            rest();
+        }
+        document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
+    }, 1000);
+}
+
+//3
 function rest() {
-    let restDuration = 4000;
+    document.getElementById("tmr").style.display = "none";
+    document.getElementById("tmr_rest").style.display = "block";
+    document.getElementById("tmr_rest").innerHTML = "Rest " + formatTime(restTimer);
     let restIntervalId = setInterval(() => {
-        restDuration -= 1000;
-        if (restDuration <= 0) {
+        restTimer -= 1000;
+        if (restTimer < 0) {
+            remainingTime = workTimer;
+            // remainingTime = 6000;
+            restTimer = 0;
             clearInterval(restIntervalId);
-            remainingTime = 4000;
-
-            intervalId = setInterval(() => {
-                remainingTime -= 1000;
-                if (remainingTime <= 0) {
-                    clearInterval(intervalId);
-                    initRound++;
-                    document.getElementById("rounds").innerHTML = initRound;
-                    rest();
-                }
-                document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
-
-            }, 1000);
+            workoutTimer();
+            restTimer = initRest;
+            document.getElementById("tmr_rest").style.display = "none";
+            console.log("workout called");
+            document.getElementById("tmr").style.display = "block";
         }
         if (initRound === totalRounds) {
             clearInterval(intervalId);
+            startButton.textContent = "START";
+            console.log(startButton);
         }
-        document.getElementById("tmr").innerHTML = "Rest " + formatTime(restDuration);
+        document.getElementById("tmr_rest").innerHTML = "Rest " + formatTime(restTimer);
     }, 1000);
 }
+
