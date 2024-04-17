@@ -1,8 +1,8 @@
-let workTimer = 6000;
+let workTimer = 7000;
 let remainingTime = workTimer;
 let initRound = 0;
 let totalRounds = 3;
-let initRest = 3000;
+let initRest = 5000;
 let restTimer = initRest;
 
 document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
@@ -67,7 +67,7 @@ dec_btn_rest.addEventListener("click", () => {
 const startButton = document.getElementById("strtBtn");
 
 //--------^^^^^^^^^^^^^^-----BUTTONS----^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^--------------------------
-//----------TIME----------------------------------------------------------------------------------
+
 function formatTime(remainingMilliseconds) {
     let minutes = Math.floor(remainingMilliseconds / 60000);
     let seconds = Math.floor((remainingMilliseconds % 60000) / 1000);
@@ -76,7 +76,6 @@ function formatTime(remainingMilliseconds) {
 
     return minutes + ":" + seconds;
 }
-//----------TIME----------------------------------------------------------------------------------
 
 //1
 startButton.addEventListener("click", startTimer);
@@ -95,12 +94,23 @@ function workoutTimer() {
         if (remainingTime < 0) {
             remainingTime = workTimer;
             clearInterval(intervalId);
-            initRound++;
-            document.getElementById("rounds").innerHTML = initRound;
+            // document.getElementById("endSound").play();
+            document.getElementById("rest_word").play();
+
             rest();
+        }
+        if (remainingTime === 3000) {
+            document.getElementById("three").play();
+        }
+        if (remainingTime === 2000) {
+            document.getElementById("two").play();
+        }
+        if (remainingTime === 1000) {
+            document.getElementById("one").play();
         }
         document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
     }, 1000);
+    document.getElementById("fight").play();
 }
 
 //3
@@ -112,7 +122,6 @@ function rest() {
         restTimer -= 1000;
         if (restTimer < 0) {
             remainingTime = workTimer;
-            // remainingTime = 6000;
             restTimer = 0;
             clearInterval(restIntervalId);
             workoutTimer();
@@ -120,6 +129,17 @@ function rest() {
             document.getElementById("tmr_rest").style.display = "none";
             console.log("workout called");
             document.getElementById("tmr").style.display = "block";
+            initRound++;
+            document.getElementById("rounds").innerHTML = initRound;
+        }
+        if (restTimer === 3000) {
+            document.getElementById("three").play();
+        }
+        if (restTimer === 2000) {
+            document.getElementById("two").play();
+        }
+        if (restTimer === 1000) {
+            document.getElementById("one").play();
         }
         if (initRound === totalRounds) {
             clearInterval(intervalId);
