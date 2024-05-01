@@ -4,6 +4,10 @@ let initRound = 0;
 let totalRounds = 5;
 let initRest = 30000;
 let restTimer = initRest;
+//-------------------------------------------------
+var audio = new Audio('https://github.com/alondgr/training_app/blob/main/start.mp3?raw=true');
+audio.play();
+//-------------------------------------------------
 
 document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
 document.getElementById("rounds").innerHTML = initRound;
