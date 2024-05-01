@@ -1,8 +1,8 @@
-let workTimer = 7000;
+let workTimer = 30000;
 let remainingTime = workTimer;
 let initRound = 0;
-let totalRounds = 3;
-let initRest = 5000;
+let totalRounds = 5;
+let initRest = 30000;
 let restTimer = initRest;
 
 document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
@@ -51,16 +51,16 @@ dec_btn_rounds.addEventListener("click", () => {
 inc_btn_rest.addEventListener("click", () => {
     restTimer += 1000;
     initRest = restTimer;
-    document.getElementById("rest_display").innerHTML = formatTime(restTimer);
+    document.getElementById("rest_display").innerHTML = "0" + formatTime(restTimer);
 });
 
 dec_btn_rest.addEventListener("click", () => {
     restTimer -= 1000;
     initRest = restTimer;
-    document.getElementById("rest_display").innerHTML = formatTime(restTimer);
+    document.getElementById("rest_display").innerHTML = "0" + formatTime(restTimer);
     if (restTimer < 1000) {
         restTimer = 1;
-        document.getElementById("rest_display").innerHTML = formatTime(restTimer);
+        document.getElementById("rest_display").innerHTML = "0" + formatTime(restTimer);
     }
 });
 
@@ -80,10 +80,14 @@ function formatTime(remainingMilliseconds) {
 //1
 startButton.addEventListener("click", startTimer);
 function startTimer() {
+    document.getElementById("buzzer").play();
+    let preTimer = 5000;
     if (startButton.textContent === "START") {
         startButton.textContent = "STOP";
     }
-    workoutTimer();
+    setTimeout(() => {
+        workoutTimer();
+    }, preTimer)
 }
 
 //2
