@@ -5,8 +5,8 @@ let totalRounds = 5;
 let initRest = 30000;
 let restTimer = initRest;
 //-------------------------------------------------
-var audio = new Audio('https://github.com/alondgr/training_app/blob/main/start.mp3?raw=true');
-audio.play();
+// var audio = new Audio('https://github.com/alondgr/training_app/blob/main/start.mp3?raw=true');
+// audio.play();
 //-------------------------------------------------
 
 document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
@@ -84,7 +84,7 @@ function formatTime(remainingMilliseconds) {
 //1
 startButton.addEventListener("click", startTimer);
 function startTimer() {
-    var audio = new Audio('https://github.com/alondgr/training_app/raw/main/start.mp3');
+    var audio = new Audio('https://github.com/alondgr/training_app/raw/main/start.mp3?raw=true');
     document.getElementById("buzzer").play() || audio.play();
 
     let preTimer = 5000;
