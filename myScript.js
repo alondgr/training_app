@@ -120,7 +120,11 @@ function workoutTimer() {
         }
         document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
     }, 1000);
-    document.getElementById("fight").play();
+    var audio1 = new Audio('https://github.com/alondgr/training_app/raw/main/fight.mp3');
+    audio1.play() || document.getElementById("fight").play();
+
+
+
 }
 
 //3
