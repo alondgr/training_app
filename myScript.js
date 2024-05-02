@@ -5,9 +5,9 @@ let totalRounds = 5;
 let initRest = 30000;
 let restTimer = initRest;
 //-------------------------------------------------
-var audio = new Audio('https://github.com/alondgr/training_app/blob/main/start.mp3?raw=true');
-audio.play();
-//-------------------------------------------------
+// var audio = new Audio('https://github.com/alondgr/training_app/blob/main/start.mp3?raw=true');
+// audio.play();
+// //-------------------------------------------------
 
 document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
 document.getElementById("rounds").innerHTML = initRound;
@@ -84,9 +84,9 @@ function formatTime(remainingMilliseconds) {
 //1
 startButton.addEventListener("click", startTimer);
 function startTimer() {
-    document.getElementById("buzzer").play();
     var audio = new Audio('https://github.com/alondgr/training_app/raw/main/start.mp3');
-    audio.play();
+    document.getElementById("buzzer").play() || audio.play();
+
     let preTimer = 5000;
     if (startButton.textContent === "START") {
         startButton.textContent = "STOP";
@@ -120,7 +120,8 @@ function workoutTimer() {
         }
         document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
     }, 1000);
-    document.getElementById("fight").play();
+    var audio = new Audio('https://github.com/alondgr/training_app/raw/main/fight.mp3');
+    document.getElementById("fight").play() || audio.play();
 }
 
 //3
