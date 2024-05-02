@@ -58,14 +58,16 @@ body {
   border-radius: 5px;
 }
 
-#strtBtn {
+#strtBtn,
+#resetBtn {
   font-size: 2em;
   padding: 0.5em;
   border-radius: 30px;
   font-weight: bold;
 }
 
-.strt {
+.strt,
+.reset {
   background-color: aqua;
   color: #5c1c1c;
   margin-top: 5px;
@@ -74,7 +76,8 @@ body {
   left: 42%;
 }
 
-.strt:hover {
+.strt,
+.reset:hover {
   background-color: rgb(106, 253, 253);
   color: black;
   cursor: pointer;

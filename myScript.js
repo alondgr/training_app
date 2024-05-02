@@ -4,6 +4,12 @@ let initRound = 0;
 let totalRounds = 5;
 let initRest = 30000;
 let restTimer = initRest;
+
+let resetButton = document.getElementById("resetBtn");
+
+resetButton.addEventListener("click", function () {
+    location.reload();
+});
 //-------------------------------------------------
 // var audio = new Audio('https://github.com/alondgr/training_app/blob/main/start.mp3?raw=true');
 // audio.play();
