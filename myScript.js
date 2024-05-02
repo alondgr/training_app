@@ -84,7 +84,7 @@ function formatTime(remainingMilliseconds) {
 //1
 startButton.addEventListener("click", startTimer);
 function startTimer() {
-    let GitAudio1 = new Audio('https://github.com/alondgr/training_app/raw/main/start.mp3');
+    const GitAudio1 = new Audio('https://github.com/alondgr/training_app/raw/main/start.mp3');
     document.getElementById("buzzer").play() || GitAudio1.play();
 
     let preTimer = 5000;
