@@ -84,8 +84,8 @@ function formatTime(remainingMilliseconds) {
 //1
 startButton.addEventListener("click", startTimer);
 function startTimer() {
-    var audio = new Audio('https://github.com/alondgr/training_app/raw/main/start.mp3');
-    document.getElementById("buzzer").play() || audio.play();
+    let GitAudio1 = new Audio('https://github.com/alondgr/training_app/raw/main/start.mp3');
+    document.getElementById("buzzer").play() || GitAudio1.play();
 
     let preTimer = 5000;
     if (startButton.textContent === "START") {
@@ -120,8 +120,8 @@ function workoutTimer() {
         }
         document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
     }, 1000);
-    var audio = new Audio('https://github.com/alondgr/training_app/raw/main/fight.mp3');
-    document.getElementById("fight").play() || audio.play();
+    let GitAudio2 = new Audio('https://github.com/alondgr/training_app/raw/main/fight.mp3');
+    document.getElementById("fight").play() || GitAudio2.play();
 }
 
 //3
