@@ -84,8 +84,8 @@ function formatTime(remainingMilliseconds) {
 //1
 startButton.addEventListener("click", startTimer);
 function startTimer() {
-    var audio = new Audio('https://github.com/alondgr/training_app/raw/main/start.mp3?raw=true');
-    document.getElementById("buzzer").play() || audio.play();
+    var audio = new Audio('https://github.com/alondgr/training_app/raw/main/start.mp3');
+    audio.play() || document.getElementById("buzzer").play();
 
     let preTimer = 5000;
     if (startButton.textContent === "START") {
