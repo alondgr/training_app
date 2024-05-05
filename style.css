@@ -5,8 +5,9 @@ body {
   min-height: 300px;
   width: auto;
   border: 10px solid red;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
+  width: 90vw;
+  height: 90vh;
 }
 
 .timer_cont {
