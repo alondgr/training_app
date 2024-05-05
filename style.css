@@ -6,6 +6,7 @@ body {
   width: auto;
   border: 10px solid red;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .timer_cont {
