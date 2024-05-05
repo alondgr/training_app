@@ -13,7 +13,6 @@ body {
   font-weight: bold;
   padding: 1em 0;
   border: 10px solid yellow;
-  /* border-radius: 4px; */
 }
 
 .timer {
@@ -133,6 +132,7 @@ body {
   align-items: center;
   justify-content: center;
   border: 10px solid green;
+  margin-left: auto;
 }
 
 .time_btn_cntrl {
