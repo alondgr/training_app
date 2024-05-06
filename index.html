@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="timer_cont" id="timerCont">
+    <div class="main" id="timerCont">
         <div class="time_btn_cntrl">
             <button class="time-buttons" id="inc_btn">+</button>
             <button class="time-buttons" id="dec_btn">-</button>
@@ -18,32 +18,40 @@
         <div class="timer" id="tmr"></div>
         <div class="timer" id="tmr_rest" style="display: none"></div>
         <div class="container">
-            <div class="rest">Rest</div>
-            <div id="rest_display" class="rest_display"></div>
-            <button class="rest-buttons" id="inc_rest_btn">+</button>
-            <button class="rest-buttons" id="dec_rest_btn">-</button>
-            <div class="rounds_cont" id="rounds"></div>
-            <div class="slash">/</div>
-            <div class="rounds_total" id="rounds_total"></div>
-            <div class="rounds">Rounds</div>
-            <button class="round-buttons" id="inc_round_btn">+</button>
-            <button class="round-buttons" id="dec_round_btn">-</button>
-            <div class="rest_cont" id="rounds"></div>
-            <div class="rest_total" id="rest"></div>
-            <audio id="buzzer" src="/start.mp3"></audio>
-            <audio id="startSound" src="/go_sound.mp3"></audio>
-            <audio id="endSound" src="/rest_sound.mp3"></audio>
-            <audio id="three" src="/three.mp3"></audio>
-            <audio id="two" src="/two.mp3"></audio>
-            <audio id="one" src="/one.mp3"></audio>
-            <audio id="rest_word" src="/rest_word.mp3"></audio>
-            <audio id="fight" src="/fight.mp3"></audio>
+            <div class="rest">Rest
+                <div id="rest_display" class="rest_display"></div>
+                <div class="tl">
+                    <button class="rest-buttons" id="inc_rest_btn">+</button>
+                    <button class="rest-buttons" id="dec_rest_btn">-</button>
+                </div>
+            </div>
+            <div class="rounds">Rounds
+                <div>
+                    <div class="rounds_cont" id="rounds"></div>
+                    <span class="slash">/</span>
+                    <div class="rounds_total" id="rounds_total"></div>
+                    <div class="tl">
+                        <button class="round-buttons" id="inc_round_btn">+</button>
+                        <button class="round-buttons" id="dec_round_btn">-</button>
+                    </div>
+                    <div class="rest_cont" id="rounds"></div>
+                    <div class="rest_total" id="rest"></div>
+                </div>
+            </div>
         </div>
         <div class="str_reset_btn_container">
             <button class="strt" id="strtBtn">START</button>
             <button class="reset" id="resetBtn">RESET</button>
         </div>
     </div>
+    <audio id="buzzer" src="/start.mp3"></audio>
+    <audio id="startSound" src="/go_sound.mp3"></audio>
+    <audio id="endSound" src="/rest_sound.mp3"></audio>
+    <audio id="three" src="/three.mp3"></audio>
+    <audio id="two" src="/two.mp3"></audio>
+    <audio id="one" src="/one.mp3"></audio>
+    <audio id="rest_word" src="/rest_word.mp3"></audio>
+    <audio id="fight" src="/fight.mp3"></audio>
 </body>
 
 

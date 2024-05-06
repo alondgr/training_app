@@ -9,16 +9,62 @@ body {
   box-sizing: border-box;
 }
 
-.timer_cont {
+.main {
   text-align: center;
   font-weight: bold;
   padding: 1em 0;
   /* border: 10px solid yellow; */
+  /* box-sizing: border-box; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.time_btn_cntrl {
+  display: flex;
+}
+.timer {
+  font-size: 8.5em;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  /* border: 10px solid green; */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.tl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
 }
 
-.timer {
-  font-size: 8.5em;
+.rest-buttons,
+.round-buttons {
+  flex: auto;
+  box-sizing: border-box;
+}
+
+.rounds,
+.rest {
+  font-size: 2em;
+  /* display: flex;
+  flex-grow: 1; */
+  margin: 0.5rem;
+  flex: auto;
+}
+
+.rest {
+  /* border: 5px solid orange; */
+}
+
+.rounds {
+  /* border: 5px solid gray; */
+  min-height: 41vh;
 }
 
 .rounds_cont,
@@ -43,12 +89,12 @@ body {
 .time-buttons {
   background-color: #2c18da;
   color: #fff;
-  font-size: 1.5em;
+  font-size: 2em;
   /* width: 7%; */
   border-radius: 30px;
   box-shadow: 0 2px #0c0c0c;
   flex: 1; /* Flex and grow equally */
-  padding: 5px;
+  padding: 15px;
   border: 1px solid #ccc;
   margin: 5px;
   text-align: center;
@@ -58,9 +104,14 @@ body {
   cursor: pointer;
 }
 
-.round-buttons:hover {
+.round-buttons,
+.rest-buttons:hover {
   background-color: #4e3de4;
   cursor: pointer;
+}
+
+.rest_display {
+  display: block;
 }
 
 .round-buttons,
@@ -68,29 +119,11 @@ body {
   background-color: #2c18da;
   color: #fff;
   font-size: 1.5em;
-  width: 5%;
   border-radius: 50px;
   box-shadow: 0 1px #0c0c0c;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  /* border: 10px solid green; */
+  width: fit-content;
+  /* flex: 1;s */
   box-sizing: border-box;
-  overflow: hidden;
-}
-
-.time_btn_cntrl {
-  display: flex;
-}
-
-.rounds,
-.rest {
-  font-size: 2em;
-  /* border: 10px solid pink; */
 }
 
 .str_reset_btn_container {
@@ -115,6 +148,7 @@ body {
   cursor: pointer;
 }
 
+/* ----------------------------------------------------------------------------------------------------- */
 @media (max-width: 600px) {
   /* body {
     background-color: #d6afaf;
@@ -129,14 +163,20 @@ body {
     box-sizing: border-box;
     overflow: hidden;
   }
+
   .rounds,
   .rest {
-    display: block;
+    font-size: 1.8em;
   }
 
   .round-buttons,
   .rest-buttons {
     font-size: 2em;
     flex: 1;
+    width: fit-content;
   }
 }
+
+/* .sdfsd {
+  width: fit-contentl
+} */
