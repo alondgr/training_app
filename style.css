@@ -156,7 +156,7 @@ body {
     font-size: small;
   }
   .container {
-    font-size: 0.5em;
+    font-size: 0.9em;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -165,16 +165,27 @@ body {
     overflow: hidden;
   }
 
-  .rounds,
-  .rest {
-    font-size: 1.5em;
-  }
-
   .round-buttons,
   .rest-buttons {
     font-size: 2em;
     flex: 1;
     width: fit-content;
+  }
+
+  .rounds_cont,
+  .rounds_total,
+  .slash,
+  .rest_display {
+    font-size: 5em;
+    /* display: inline; */
+  }
+
+  .rounds,
+  .rest {
+    font-size: 1em;
+  }
+  .rest {
+    margin-bottom: 140px;
   }
 }
 
