@@ -150,10 +150,11 @@ body {
 
 /* ----------------------------------------------------------------------------------------------------- */
 @media (max-width: 600px) {
-  /* body {
-    background-color: #d6afaf;
-    color: yellow;
-  } */
+  body {
+    /* background-color: #d6afaf;
+    color: yellow; */
+    font-size: small;
+  }
   .container {
     font-size: 0.5em;
     display: flex;
@@ -166,7 +167,7 @@ body {
 
   .rounds,
   .rest {
-    font-size: 1.8em;
+    font-size: 1.5em;
   }
 
   .round-buttons,
