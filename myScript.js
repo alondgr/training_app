@@ -129,7 +129,7 @@ function workoutTimer() {
         document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
     }, 1000);
 
-    var audio1 = new Audio('https://github.com/alondgr/training_app/raw/main/fight_lean.mp3');
+    var audio1 = new Audio('https://github.com/alondgr/training_app/raw/main/go_sound.mp3');
     audio1.play() || document.getElementById("fight").play();
 
 
