@@ -108,7 +108,8 @@ function workoutTimer() {
             clearInterval(intervalId);
             // document.getElementById("endSound").play();
             var audio4 = new Audio('https://github.com/alondgr/training_app/raw/main/rest_word.mp3');
-            document.getElementById("rest_word").play() || audio4.play();
+            audio4.play() || document.getElementById("rest_word").play();
+            console.log("rest word");
 
             rest();
         }
