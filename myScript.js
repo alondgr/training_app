@@ -126,6 +126,9 @@ function workoutTimer() {
     var audio1 = new Audio('https://github.com/alondgr/training_app/raw/main/three_lean.mp3');
     audio1.play() || document.getElementById("fight").play();
 
+    var audio = new Audio('https://github.com/alondgr/training_app/raw/main/start.mp3');
+    audio.play() || document.getElementById("buzzer").play();
+
 
 
 }
