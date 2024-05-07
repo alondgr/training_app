@@ -107,7 +107,8 @@ function workoutTimer() {
             remainingTime = workTimer;
             clearInterval(intervalId);
             // document.getElementById("endSound").play();
-            document.getElementById("rest_word").play();
+            var audio4 = new Audio('https://github.com/alondgr/training_app/raw/main/rest_word.mp3');
+            document.getElementById("rest_word").play() || audio4.play();
 
             rest();
         }
@@ -130,6 +131,7 @@ function rest() {
     document.getElementById("tmr_rest").style.display = "block";
     document.getElementById("tmr_rest").innerHTML = "Rest " + formatTime(restTimer);
     var audio3 = new Audio('https://github.com/alondgr/training_app/raw/main/three_lean.mp3');
+
     let restIntervalId = setInterval(() => {
         restTimer -= 1000;
         if (restTimer < 0) {
