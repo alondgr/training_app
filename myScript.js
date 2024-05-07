@@ -100,6 +100,7 @@ function startTimer() {
 
 //2
 function workoutTimer() {
+    var audio3 = new Audio('https://github.com/alondgr/training_app/raw/main/three_lean.mp3');
     console.log("remaingn time" + remainingTime);
     intervalId = setInterval(() => {
         remainingTime -= 1000;
@@ -113,7 +114,7 @@ function workoutTimer() {
             rest();
         }
         if (remainingTime === 3000) {
-            document.getElementById("three").play();
+            audio3.play() || document.getElementById("three").play();
         }
         if (remainingTime === 2000) {
             document.getElementById("two").play();
