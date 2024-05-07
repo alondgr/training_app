@@ -101,6 +101,8 @@ function startTimer() {
 //2
 function workoutTimer() {
     var audio3 = new Audio('https://github.com/alondgr/training_app/raw/main/three_lean.mp3');
+    var audioTwo = new Audio('https://github.com/alondgr/training_app/raw/main/two.mp3');
+    var audioOne = new Audio('https://github.com/alondgr/training_app/raw/main/one.mp3');
     console.log("remaingn time" + remainingTime);
     intervalId = setInterval(() => {
         remainingTime -= 1000;
@@ -117,10 +119,10 @@ function workoutTimer() {
             audio3.play() || document.getElementById("three").play();
         }
         if (remainingTime === 2000) {
-            document.getElementById("two").play();
+            audioTwo.play() || document.getElementById("two").play();
         }
         if (remainingTime === 1000) {
-            document.getElementById("one").play();
+            audioOne.play() || document.getElementById("one").play();
         }
         document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
     }, 1000);
@@ -135,6 +137,8 @@ function rest() {
     document.getElementById("tmr_rest").style.display = "block";
     document.getElementById("tmr_rest").innerHTML = "Rest " + formatTime(restTimer);
     var audio3 = new Audio('https://github.com/alondgr/training_app/raw/main/three_lean.mp3');
+    var audioTwo = new Audio('https://github.com/alondgr/training_app/raw/main/two.mp3');
+    var audioOne = new Audio('https://github.com/alondgr/training_app/raw/main/one.mp3');
 
     let restIntervalId = setInterval(() => {
         restTimer -= 1000;
@@ -151,13 +155,13 @@ function rest() {
             document.getElementById("rounds").innerHTML = initRound;
         }
         if (restTimer === 3000) {
-            document.getElementById("three").play() || audio3.play();
+            audio3.play() || document.getElementById("three").play();
         }
         if (restTimer === 2000) {
-            document.getElementById("two").play();
+            audioTwo.play() || document.getElementById("two").play();
         }
         if (restTimer === 1000) {
-            document.getElementById("one").play();
+            audioOne.play() || document.getElementById("one").play();
         }
         if (initRound === totalRounds) {
             clearInterval(intervalId);
