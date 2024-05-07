@@ -141,6 +141,7 @@ function rest() {
     document.getElementById("tmr").style.display = "none";
     document.getElementById("tmr_rest").style.display = "block";
     document.getElementById("tmr_rest").innerHTML = "Rest " + formatTime(restTimer);
+    var audio3 = new Audio('https://github.com/alondgr/training_app/raw/main/three_lean.mp3');
     let restIntervalId = setInterval(() => {
         restTimer -= 1000;
         if (restTimer < 0) {
@@ -156,7 +157,7 @@ function rest() {
             document.getElementById("rounds").innerHTML = initRound;
         }
         if (restTimer === 3000) {
-            document.getElementById("three").play();
+            document.getElementById("three").play() || audio3.play();
         }
         if (restTimer === 2000) {
             document.getElementById("two").play();
