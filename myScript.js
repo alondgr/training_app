@@ -13,8 +13,8 @@ resetButton.addEventListener("click", function () {
 //-------------------------------------------------
 // var audio = new Audio('https://github.com/alondgr/training_app/blob/main/start.mp3?raw=true');
 // audio.play();
-var audio1 = new Audio('https://github.com/alondgr/training_app/blob/main/fight.mp3?raw=true');
-audio1.play();
+// var audio1 = new Audio('https://github.com/alondgr/training_app/blob/main/fight.mp3?raw=true');
+// audio1.play();
 //-------------------------------------------------
 
 document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
@@ -129,7 +129,7 @@ function workoutTimer() {
         document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
     }, 1000);
 
-    var audio1 = new Audio('https://github.com/alondgr/training_app/raw/main/fight.mp3');
+    var audio1 = new Audio('https://github.com/alondgr/training_app/raw/main/fight_lean.mp3');
     audio1.play() || document.getElementById("fight").play();
 
 
