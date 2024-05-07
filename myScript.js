@@ -89,7 +89,7 @@ function startTimer() {
     var audio = new Audio('https://github.com/alondgr/training_app/raw/main/start.mp3');
     audio.play() || document.getElementById("buzzer").play();
 
-    let preTimer = 5000;
+    let preTimer = 3000;
     if (startButton.textContent === "START") {
         startButton.textContent = "STOP";
     }
@@ -110,7 +110,6 @@ function workoutTimer() {
             var audio4 = new Audio('https://github.com/alondgr/training_app/raw/main/rest_word.mp3');
             audio4.play() || document.getElementById("rest_word").play();
             console.log("rest word");
-
             rest();
         }
         if (remainingTime === 3000) {
@@ -124,6 +123,10 @@ function workoutTimer() {
         }
         document.getElementById("tmr").innerHTML = "0" + formatTime(remainingTime);
     }, 1000);
+    var audio2 = new Audio('https://github.com/alondgr/training_app/raw/main/fight_lean.mp3');
+    audio2.play() || document.getElementById("fight").play();
+    console.log("rest word");
+    rest();
 }
 
 //3
