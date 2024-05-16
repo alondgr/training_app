@@ -88,10 +88,18 @@ startButton.addEventListener("click", startTimer);
 function startTimer() {
     var audio = new Audio('https://github.com/alondgr/training_app/raw/main/start.mp3');
     audio.play() || document.getElementById("buzzer").play();
+    inc_btn.disabled = true;
+    dec_btn.disabled = true;
+    dec_btn.disabled = true;
+    inc_btn_rounds.disabled = true;
+    dec_btn_rounds.disabled = true;
+    inc_btn_rest.disabled = true;
+    dec_btn_rest.disabled = true;
+    startButton.disabled = true;
 
     let preTimer = 3000;
     if (startButton.textContent === "START") {
-        startButton.textContent = "STOP";
+        startButton.textContent = "PAUSE";
     }
     setTimeout(() => {
         workoutTimer();
